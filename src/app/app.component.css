@@ -1,3 +1,9 @@
 * [lang^=en] {
   color: green;
 }
+
+h2{
+  text-align:left;
+  color:#080808;
+  font-family:'Patrick Hand', cursive;
+}

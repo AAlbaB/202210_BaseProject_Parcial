@@ -10,7 +10,7 @@ import { Cafe } from './cafe';
 })
 export class CafeService {
 
-  private apiUrl: string = environment.baseUrl;
+  private apiUrl: string = environment.baseUrl + '202212_MISW4104_Grupo3.json';
 
   constructor(private http: HttpClient) { }
 
