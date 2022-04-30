@@ -18,6 +18,11 @@ export class CafeListComponent implements OnInit {
     });
   }
 
+  public filtroCafe(cafeBuscar: string): number {
+    const tipoCafe = this.cafes.filter( ({ tipo }) => tipo === cafeBuscar );
+    return tipoCafe.length;
+  }
+
   ngOnInit() {
     this.getCafes();
   }
