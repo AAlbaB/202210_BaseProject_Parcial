@@ -1,14 +1,16 @@
 <testExecutions version="1">
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="61"/>
-    <testCase name="AppComponent should have as title 'Aroma Mágico'" duration="9"/>
-  </file>
   <file path="src/app/cafe/cafe-list/cafe-list.component.spec.ts">
-    <testCase name="CafeListComponent Prueba muestra 3 cafes" duration="32"/>
-    <testCase name="CafeListComponent Component has a Table" duration="36"/>
-    <testCase name="CafeListComponent Should Create" duration="19"/>
+    <testCase name="CafeListComponent Se crea una etiqueta th para el número" duration="45"/>
+    <testCase name="CafeListComponent Component has a Table" duration="8"/>
+    <testCase name="CafeListComponent Debe tener 4 filas, 1 Encababezado y 3 de cafés" duration="7"/>
+    <testCase name="CafeListComponent Debe crearse" duration="6"/>
+    <testCase name="CafeListComponent Debe guardar 3 cafes" duration="7"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent Debería crear la APP" duration="8"/>
+    <testCase name="AppComponent Debería tener como título 'Aroma Mágico'" duration="6"/>
   </file>
   <file path="src/app/cafe/cafe.service.spec.ts">
-    <testCase name="Service: Cafe should ..." duration="4"/>
+    <testCase name="Service: Cafe Should ..." duration="3"/>
   </file>
 </testExecutions>

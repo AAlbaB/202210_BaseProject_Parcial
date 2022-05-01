@@ -27,35 +27,49 @@ describe('CafeListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CafeListComponent);
     component = fixture.componentInstance;
+    cafe = [];
 
     for (let i=0; i<3; i++){
       cafe.push(
         new Cafe(
-          faker.datatype.number(),
+          faker.datatype.number(2),
+          faker.name.firstName("female"),
           faker.lorem.sentence(),
           faker.lorem.sentence(),
           faker.lorem.sentence(),
-          faker.lorem.sentence(),
-          faker.datatype.number(),
-          faker.lorem.sentence()
+          faker.datatype.number({min:500, max:1900}),
+          faker.image.imageUrl()
         )
       );
-    }
+    };
+
     component.cafes = cafe;
 
     fixture.detectChanges();
     debug = fixture.debugElement;
   });
 
-  it('Should Create', () => {
+  it('Debe crearse', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('Prueba muestra 3 cafes', () =>{
-    expect(component.cafes.length).toEqual(3);
   });
 
   it("Component has a Table", () => {
     expect(debug.query(By.css("tbody")).childNodes.length).toBeGreaterThan(0);
+  });
+
+  it('Debe guardar 3 cafes', () => {
+    expect(component.cafes.length).toEqual(3);
+  });
+
+  it('Debe tener 4 filas, 1 Encababezado y 3 de cafés', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const tr = bannerElement.querySelectorAll('tr')!;
+    expect(tr.length).toBe(4);
+  });
+
+  it('Se crea una etiqueta th para el número', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const th = bannerElement.querySelectorAll('th')!;
+    expect(th[0].textContent).toEqual('#');
   });
 });
